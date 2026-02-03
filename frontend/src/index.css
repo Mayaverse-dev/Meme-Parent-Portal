@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #faf8d8;
+    color: #221d1e;
+    @apply font-sans antialiased;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-maya-dark/10 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-maya-dark/20;
+}
+
+/* Minimalist selection */
+::selection {
+  @apply bg-maya-red/20 text-maya-red;
+}
