@@ -1,20 +1,83 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --maya-red: #de0136;
+  --maya-dark: #221d1e;
+  --maya-light: #faf8d8;
+  --maya-cream: #f5f2d0;
+}
+
 @layer base {
   body {
-    background-color: #faf8d8;
-    color: #221d1e;
+    background-color: var(--maya-dark);
+    color: var(--maya-light);
     @apply font-sans antialiased;
   }
 }
 
+/* Noise texture overlay */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  z-index: 100;
+}
+
+/* Gradient backgrounds */
+.bg-maya-gradient {
+  background: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(222, 1, 54, 0.15), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(222, 1, 54, 0.08), transparent),
+    var(--maya-dark);
+}
+
+.bg-maya-gradient-light {
+  background: 
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(222, 1, 54, 0.06), transparent),
+    radial-gradient(ellipse 60% 40% at 0% 100%, rgba(222, 1, 54, 0.04), transparent),
+    var(--maya-light);
+}
+
+/* Quote styling */
+.quote-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+}
+
+/* Glow effects */
+.glow-red {
+  box-shadow: 0 0 60px rgba(222, 1, 54, 0.3), 0 0 100px rgba(222, 1, 54, 0.1);
+}
+
+.text-glow {
+  text-shadow: 0 0 40px rgba(222, 1, 54, 0.5);
+}
+
+/* Card glass effect */
+.glass-card {
+  background: rgba(250, 248, 216, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(250, 248, 216, 0.08);
+}
+
+.glass-card:hover {
+  background: rgba(250, 248, 216, 0.06);
+  border-color: rgba(222, 1, 54, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 40px rgba(222, 1, 54, 0.1);
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -22,14 +85,79 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-maya-dark/10 rounded-full;
+  background: rgba(250, 248, 216, 0.15);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-maya-dark/20;
+  background: rgba(250, 248, 216, 0.25);
 }
 
-/* Minimalist selection */
+/* Selection */
 ::selection {
-  @apply bg-maya-red/20 text-maya-red;
+  background: rgba(222, 1, 54, 0.4);
+  color: var(--maya-light);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animation-delay-100 { animation-delay: 0.1s; }
+.animation-delay-200 { animation-delay: 0.2s; }
+.animation-delay-300 { animation-delay: 0.3s; }
+.animation-delay-400 { animation-delay: 0.4s; }
+.animation-delay-500 { animation-delay: 0.5s; }
+
+/* Logo styling */
+.logo-container {
+  filter: drop-shadow(0 0 30px rgba(222, 1, 54, 0.4));
+}
+
+/* Input styling for dark theme */
+.input-dark {
+  background: rgba(250, 248, 216, 0.05);
+  border: 1px solid rgba(250, 248, 216, 0.1);
+  color: var(--maya-light);
+}
+
+.input-dark::placeholder {
+  color: rgba(250, 248, 216, 0.3);
+}
+
+.input-dark:focus {
+  background: rgba(250, 248, 216, 0.08);
+  border-color: rgba(222, 1, 54, 0.5);
+  outline: none;
+  box-shadow: 0 0 20px rgba(222, 1, 54, 0.2);
 }

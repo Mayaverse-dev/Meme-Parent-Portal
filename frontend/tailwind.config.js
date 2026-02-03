@@ -11,10 +11,15 @@ export default {
           red: '#de0136',
           dark: '#221d1e',
           light: '#faf8d8',
+          cream: '#f5f2d0',
         }
       },
       fontFamily: {
-        sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+      },
+      animation: {
+        'spin-slow': 'spin 20s linear infinite',
       }
     },
   },
