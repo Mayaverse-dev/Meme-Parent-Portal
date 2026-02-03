@@ -88,13 +88,13 @@ function App() {
           <AppCard
             title="Ask Maya"
             description="Query the canonical lore using natural language. Get answers grounded in the official Maya universe."
-            href="https://a.meme.entermaya.com"
+            href="https://askmaya.meme.entermaya.com"
             icon="chat"
           />
           <AppCard
             title="Lore Consistency Enforcer"
             description="Validate your stories against the Lore Book. Catch inconsistencies before they become canon."
-            href="https://b.meme.entermaya.com"
+            href="https://lore.meme.entermaya.com"
             icon="shield"
           />
         </div>
