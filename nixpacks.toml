@@ -1,0 +1,5 @@
+[phases.setup]
+nixPkgs = ["python3", "nodejs"]
+
+[phases.build]
+cmds = ["cd frontend && npm install && npm run build && mv dist ../static && cd .. && pip install -r requirements.txt"]
