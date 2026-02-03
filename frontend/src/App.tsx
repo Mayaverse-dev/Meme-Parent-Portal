@@ -58,41 +58,39 @@ function App() {
   // Login view
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-maya-gradient px-4 relative overflow-hidden">
+      <div className="min-h-screen flex flex-col bg-maya-gradient px-2 relative overflow-hidden">
         <div className="noise-overlay" />
         
         {/* Background decorative elements */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-maya-red/5 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-maya-red/3 rounded-full blur-3xl" />
         
-        {/* Quote at top */}
-        <div className="absolute top-12 left-0 right-0 text-center px-4 opacity-0 animate-fade-in-up">
-          <p className="quote-text text-maya-light/50 text-lg md:text-xl max-w-2xl mx-auto">
-            "Aye, there's the rub, For in that sweep of determinism what memes may come."
+        {/* Quote at top of page */}
+        <div className="pt-12 md:pt-16 text-center px-4 opacity-0 animate-fade-in-up">
+          <p className="quote-text text-maya-light/60 text-lg md:text-xl">
+            "Aye, there's the rub,
+          </p>
+          <p className="quote-text text-maya-light/60 text-lg md:text-xl">
+            For in that sweep of determinism what memes may come."
           </p>
         </div>
 
-        {/* Main content */}
-        <div className="relative z-10 flex flex-col items-center">
-          {/* Logo */}
-          <div className="mb-8 opacity-0 animate-fade-in-up animation-delay-100">
-            <div className="logo-container animate-float">
-              <img 
-                src="/maya.webp" 
-                alt="Maya" 
-                className="w-28 h-28 md:w-36 md:h-36 object-contain"
-              />
-            </div>
+        {/* Main content - centered */}
+        <div className="flex-1 flex flex-col items-center justify-center relative z-10">
+          {/* Title "Enter" */}
+          <div className="mb-4 text-center opacity-0 animate-fade-in-up animation-delay-100">
+            <h1 className="text-xs font-semibold tracking-[0.4em] text-maya-light/50 uppercase">
+              ENTER
+            </h1>
           </div>
 
-          {/* Title */}
-          <div className="mb-10 text-center opacity-0 animate-fade-in-up animation-delay-200">
-            <h1 className="text-xs font-semibold tracking-[0.4em] text-maya-red uppercase mb-3">
-              ENTER THE
-            </h1>
-            <h2 className="text-5xl md:text-6xl font-bold text-maya-light tracking-tight text-glow">
-              Mayaverse
-            </h2>
+          {/* Logo */}
+          <div className="mb-8 opacity-0 animate-fade-in-up animation-delay-200">
+            <img 
+              src="/maya.webp" 
+              alt="Maya" 
+              className="w-40 md:w-52 h-auto"
+            />
           </div>
 
           {/* Login Form */}
@@ -102,7 +100,7 @@ function App() {
         </div>
 
         {/* Bottom decoration */}
-        <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-2 opacity-0 animate-fade-in-up animation-delay-500">
+        <div className="pb-8 flex justify-center gap-2 opacity-0 animate-fade-in-up animation-delay-500">
           <div className="w-1 h-1 rounded-full bg-maya-light/20" />
           <div className="w-1 h-1 rounded-full bg-maya-red/60" />
           <div className="w-1 h-1 rounded-full bg-maya-light/20" />
@@ -113,37 +111,23 @@ function App() {
 
   // App directory view
   return (
-    <div className="min-h-screen bg-maya-gradient px-4 py-8 md:py-12 relative overflow-hidden">
+    <div className="min-h-screen flex flex-col bg-maya-gradient px-4 py-8 md:py-12 relative overflow-hidden">
       <div className="noise-overlay" />
       
       {/* Background decorative elements */}
       <div className="absolute top-0 left-1/3 w-[600px] h-[600px] bg-maya-red/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-maya-red/3 rounded-full blur-3xl" />
 
-      <div className="max-w-5xl mx-auto relative z-10">
-        {/* Quote at top center */}
-        <div className="text-center mb-12 md:mb-16 opacity-0 animate-fade-in-up">
-          <p className="quote-text text-maya-light/40 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
-            "Aye, there's the rub, For in that sweep of determinism what memes may come."
-          </p>
-        </div>
-
+      <div className="flex-1 max-w-5xl mx-auto w-full relative z-10">
         {/* Header */}
-        <div className="flex flex-col md:flex-row items-center justify-between mb-12 md:mb-16 gap-6 opacity-0 animate-fade-in-up animation-delay-100">
-          <div className="flex items-center gap-5">
-            <div className="logo-container">
-              <img 
-                src="/maya.webp" 
-                alt="Maya" 
-                className="w-14 h-14 md:w-16 md:h-16 object-contain"
-              />
-            </div>
-            <div>
-              <h1 className="text-[10px] font-semibold tracking-[0.3em] text-maya-red uppercase mb-1">
-                MAYA
-              </h1>
-              <h2 className="text-2xl md:text-3xl font-bold text-maya-light">Developer Tools</h2>
-            </div>
+        <div className="flex items-start justify-between mb-12 md:mb-16 opacity-0 animate-fade-in-up animation-delay-100">
+          <div className="flex flex-col items-start">
+            <img 
+              src="/maya.webp" 
+              alt="Maya" 
+              className="w-12 md:w-16 h-auto mb-2"
+            />
+            <h2 className="text-4xl md:text-5xl font-bold text-maya-light">Tools</h2>
           </div>
           <button
             onClick={handleLogout}
@@ -159,27 +143,27 @@ function App() {
             title="Ask Maya"
             description="Query the canonical lore using natural language. Get answers grounded in the official Maya universe."
             href="https://askmaya.meme.entermaya.com"
-            icon="chat"
+            image="/one-bard-one-lullaby.png"
           />
           <AppCard
             title="Lore Consistency Enforcer"
             description="Validate your stories against the Lore Book. Catch inconsistencies before they become canon."
             href="https://lore.meme.entermaya.com"
-            icon="shield"
+            image="/vidhi-vidhaata.png"
           />
         </div>
+      </div>
 
-        {/* Footer */}
-        <div className="mt-16 md:mt-20 text-center opacity-0 animate-fade-in-up animation-delay-300">
-          <div className="flex justify-center gap-2 mb-4">
-            <div className="w-8 h-px bg-maya-light/10" />
-            <div className="w-2 h-2 rounded-full bg-maya-red/40" />
-            <div className="w-8 h-px bg-maya-light/10" />
-          </div>
-          <p className="text-xs text-maya-light/20 tracking-widest uppercase">
-            Maya Narrative Universe
-          </p>
+      {/* Footer - pinned to bottom */}
+      <div className="pb-6 pt-8 text-center opacity-0 animate-fade-in-up animation-delay-300 relative z-10">
+        <div className="flex justify-center gap-2 mb-4">
+          <div className="w-8 h-px bg-maya-light/10" />
+          <div className="w-2 h-2 rounded-full bg-maya-red/40" />
+          <div className="w-8 h-px bg-maya-light/10" />
         </div>
+        <p className="text-xs text-maya-light/20 tracking-widest uppercase">
+          Maya Narrative Universe
+        </p>
       </div>
     </div>
   )
