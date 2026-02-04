@@ -151,6 +151,12 @@ function App() {
             href="https://lore.meme.entermaya.com"
             image="/vidhi-vidhaata.png"
           />
+          <AppCard
+            title="Copy Editor"
+            description="Edit and refine your content with AI-powered copy editing tools for the Maya universe."
+            href="https://copyedit.meme.entermaya.com"
+            image="/seed-out-of-place.png"
+          />
         </div>
       </div>
 
