@@ -157,6 +157,12 @@ function App() {
             href="https://copyedit.meme.entermaya.com"
             image="/seed-out-of-place.png"
           />
+          <AppCard
+            title="PDF Watermark Tool"
+            description="Add watermarks to PDF documents for the Maya universe."
+            href="https://watermarking-tool-production.up.railway.app"
+            image="/watermark.png"
+          />
         </div>
       </div>
 
