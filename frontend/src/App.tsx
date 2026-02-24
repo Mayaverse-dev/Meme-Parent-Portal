@@ -169,6 +169,12 @@ function App() {
             href="https://biological-sandbox-production.up.railway.app"
             image="/one-eyed-turloth.png"
           />
+          <AppCard
+            title="Manuscript Analysis Tool"
+            description="Analyse manuscripts against the Maya rubric. Surface strengths, gaps, and editorial recommendations."
+            href="https://manuscript-analysis-tool-production.up.railway.app"
+            image="/one-bard-one-lullaby.png"
+          />
         </div>
       </div>
 
