@@ -166,7 +166,7 @@ function App() {
           <AppCard
             title="Biological Sandbox"
             description="Speculative Species Synthesizer for creating unique lifeforms in the Maya universe."
-            href="https://biological-sandbox-production.up.railway.app"
+            href="https://biobox.meme.entermaya.com"
             image="/one-eyed-turloth.png"
           />
           <AppCard
