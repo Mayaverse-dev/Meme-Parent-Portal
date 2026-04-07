@@ -175,6 +175,12 @@ function App() {
             href="https://manuscript-analysis-tool-production.up.railway.app"
             image="/one-bard-one-lullaby.png"
           />
+          <AppCard
+            title="Quote Board"
+            description="Curate and vote on quotes from Seed Takes Root for the Maya universe."
+            href="https://quote-vote-production.up.railway.app"
+            image="/memory-of-water.png"
+          />
         </div>
       </div>
 
